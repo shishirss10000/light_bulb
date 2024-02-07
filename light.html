@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Bulb</title>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn {
+            padding: 20px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <!-- Initial state: light off -->
+    <img id="bulb" src="lightoff.jpg" alt="" class="center">
+    <button id="toggleBtn" class="center btn">Turn On</button>
+
+    <script>
+        // Get references to the button and the bulb image
+        let btn = document.getElementById('toggleBtn')
+        let bulb = document.getElementById('bulb')
+
+        // Add a click event listener to the button
+        btn.addEventListener('click', toggleBulb)
+
+        // Variable to track the state of the bulb
+        let isOn = false;
+
+        // Function to handle toggling the bulb state
+        function toggleBulb(e) {
+            // Toggle the state of the bulb
+            isOn = !isOn;
+
+            // Change the bulb image and button text based on the state
+            if (isOn) {
+                bulb.src = "lighton.jpg";
+                btn.textContent = "Turn Off";
+            } else {
+                bulb.src = "lightoff.jpg";
+                btn.textContent = "Turn On";
+            }
+        }
+    </script>
+</body>
+</html>
